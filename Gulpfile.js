@@ -5,7 +5,7 @@ var $ = require('gulp-load-plugins')({});
 gulp.task('build', function() {
   return gulp.src('App.elm')
     .pipe($.plumber())
-    .pipe($.elm())
+    .pipe($.elm({ warnings: true }))
     .pipe(gulp.dest('build/'));
 });
 
