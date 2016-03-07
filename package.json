@@ -12,7 +12,7 @@
   "dependencies": {
     "elm-test": "^0.16.0",
     "gulp": "^3.9.0",
-    "gulp-elm": "github:jackfranklin/gulp-elm#allow-warnings-option",
+    "gulp-elm": "^0.4.0",
     "gulp-load-plugins": "^1.1.0",
     "gulp-plumber": "^1.0.1",
     "gulp-shell": "^0.5.1",
