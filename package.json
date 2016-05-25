@@ -17,5 +17,8 @@
     "gulp-shell": "^0.5.1",
     "gulp-watch": "^4.3.5",
     "live-server": "^0.9.0"
+  },
+  "devDependencies": {
+    "gulp-elm": "0.4.4"
   }
 }
