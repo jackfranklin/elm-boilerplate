@@ -1,9 +1,8 @@
--- TODO: change the app name!
-module MyApp where
+module MyApp exposing (..)
 
-import Graphics.Element exposing (..)
+import Html exposing (text)
 
-main : Element
+
+main : Html.Html a
 main =
-  show "Hello World"
-
+    text "Hello World"

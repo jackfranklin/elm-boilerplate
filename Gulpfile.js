@@ -2,6 +2,10 @@ var gulp = require('gulp');
 var liveServer = require('live-server');
 var $ = require('gulp-load-plugins')({});
 
+function watchElmAndRun(...args) {
+  return gulp.watch('**/*.elm', args);
+}
+
 gulp.task('build', function() {
   return gulp.src('App.elm')
     .pipe($.plumber())
@@ -10,19 +14,18 @@ gulp.task('build', function() {
 });
 
 gulp.task('start', ['build'], function() {
-  gulp.watch('**/*.elm', ['build']);
+  watchElmAndRun('build');
 });
 
-gulp.task('test', function() {
-  return gulp.src('TestRunner.elm').pipe($.shell([
-    './node_modules/.bin/elm-test <%= file.path %>'
-  ]));
+gulp.task('test', $.shell.task(['./scripts/elm-test'], {
+  ignoreErrors: true
+}));
+
+gulp.task('watch-test', ['test'], function() {
+  watchElmAndRun('test');
 });
+
 
 gulp.task('serve', function() {
-  var params = {
-    open: false, // When false, it won't load your browser by default.
-  };
-
-  liveServer.start(params);
+  liveServer.start({ open: false });
 });

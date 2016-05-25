@@ -1,10 +1,10 @@
-module FooTest where
+module FooTest exposing (..)
 
 import ElmTest exposing (..)
 
+
 tests : Test
 tests =
-  suite "Some Test"
-    [
-      test "Something is true" (assert True)
-    ]
+    suite "Some Test"
+        [ test "Something is true" (assert True)
+        ]
