@@ -17,7 +17,7 @@ gulp.task('start', ['build'], function() {
   watchElmAndRun('build');
 });
 
-gulp.task('test', $.shell.task(['./scripts/elm-test'], {
+gulp.task('test', $.shell.task(['./scripts/nice-elm-test'], {
   ignoreErrors: true
 }));
 
